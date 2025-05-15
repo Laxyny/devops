@@ -7,6 +7,8 @@ app.get("/", (req, res) =>
   res.send("Hello, projet Docker nodejs avec Railway !")
 );
 
+app.use("/movies", movieRoutes); // Routes pour les films
+app.use("/books", bookRoutes); // Routes pour les livres
 app.use("/recipes", recipeRoutes); // Routes pour les recettes
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

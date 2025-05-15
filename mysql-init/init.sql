@@ -42,3 +42,39 @@ VALUES (
   'https://images.unsplash.com/photo-1651585594107-859f80b4ca3a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   1 -- ID de l'utilisateur qui crée la recette
 );
+
+CREATE TABLE IF NOT EXISTS books (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  summary TEXT,
+  user_id INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+INSERT INTO books (title, author, summary, user_id)
+VALUES (
+  'Le Petit Prince',
+  'Antoine de Saint-Exupéry',
+  'Le livre est bien',
+  1
+);
+
+CREATE TABLE IF NOT EXISTS movies (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  director VARCHAR(255) NOT NULL,
+  synopsis TEXT,
+  user_id INT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (user_id) REFERENCES users(id)
+) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+
+INSERT INTO movies (title, director, synopsis, user_id)
+VALUES (
+  'Inception',
+  'Christopher Nolan',
+  'Il est bien',
+  1
+);
