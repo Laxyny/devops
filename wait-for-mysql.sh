@@ -30,4 +30,4 @@ else
 fi
 
 # Démarrer l'application
-npm run start
+npm run import-sql && npm start

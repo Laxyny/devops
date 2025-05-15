@@ -4,6 +4,7 @@
   "description": "Backend Node.js pour l'application Vrac Vin",
   "main": "app.js",
   "scripts": {
+    "import-sql": "node import-sql.js",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
