@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 const recipeRoutes = require("./routes/recipes.routes");
+const movieRoutes = require("./routes/movies.routes");
+const bookRoutes = require("./routes/books.routes");
 
 app.get("/", (req, res) =>
   res.send("Hello, projet Docker nodejs avec Railway !")
